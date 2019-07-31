@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    {% block content %}
+        <h1> Welcome Home</h1>
+        {% if user.is_authenticated %}
+
+
+        <ul class="indexpage">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'home_url' %}">About Us</a></li>
+            <li><a href="{% url 'gallery_url' %}">Gallery</a></li>
+            <li><a href="{% url 'login_url' %}">Login</a></li>
+            <li><a href="{% url 'register_url' %}">Register</a></li>
+        </ul>
+
+    <img src="{% static 'images/python.png' %}" />
+<link rel="stylesheet" href="{% static 'css\home.css' %}" />
+
+
+            {% endif %}
+    {% endblock %}
+
+</body>
+</html>
